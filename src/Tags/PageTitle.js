@@ -51,7 +51,7 @@ class PageTitle extends BaseTag {
         ? context.ctx.renderData.title
         : context.ctx.title;
 
-    const tagPageNumber = (self.keyPathVal(context.ctx, "tag.pageNumber"));
+    const tagPageNumber = self.keyPathVal(context.ctx, "tag.pageNumber");
     const pageNumber = (tagPageNumber != undefined) ? tagPageNumber : self.keyPathVal(context.ctx, "pagination.pageNumber", 0);
 
     return self.render(title, pageNumber);
