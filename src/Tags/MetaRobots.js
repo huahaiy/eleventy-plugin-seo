@@ -23,8 +23,9 @@ class MetaRobots extends BaseTag {
   }
 
   nunjucksRender(self, context) {
-    const tagPageNumber = self.keyPathVal(context.ctx, "tag.pageNumber");
-    const pageNumber = (tagPageNumber != undefined) ? tagPageNumber : self.keyPathVal(context.ctx, "pagination.pageNumber", 0);
+    const pageNumber = (self.keyPathVal(context.ctx, "tag.tagName") != undefined) 
+      ? self.keyPathVal(context.ctx, "tag.pageNumber", 0) 
+      : self.keyPathVal(context.ctx, "pagination.pageNumber", 0);
 
     return self.render(pageNumber);
   }
